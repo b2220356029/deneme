@@ -6,8 +6,11 @@ const text_cur = document.getElementById('cur_selected');
 const btn_start = document.getElementById('set_from');
 const btn_end = document.getElementById('set_to');
 
-let response = fetch('/src/edges.json')
-let graph = response.json();
+fetch('/src/edges.json')
+    .then(response => response.json())
+    .then(data =>{
+        let graph = data;
+    }
 let cur = NaN;
 let start = NaN;
 let end = NaN;
